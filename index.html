@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Expense Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Smart Expense Tracker</h1>
+      <p class="muted">Track income & expenses with categories (saved automatically)</p>
+    </header>
+
+    <section class="cards">
+      <div class="card">
+        <p class="label">Income</p>
+        <h2 id="income">₹0</h2>
+      </div>
+      <div class="card">
+        <p class="label">Expense</p>
+        <h2 id="expense">₹0</h2>
+      </div>
+      <div class="card">
+        <p class="label">Balance</p>
+        <h2 id="balance">₹0</h2>
+      </div>
+    </section>
+
+    <section class="form">
+      <h3>Add Transaction</h3>
+
+      <div class="row">
+        <label>Type</label>
+        <select id="type">
+          <option value="income">Income</option>
+          <option value="expense">Expense</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <label>Category</label>
+        <select id="category">
+          <option value="Food">Food</option>
+          <option value="Rent">Rent</option>
+          <option value="Travel">Travel</option>
+          <option value="Shopping">Shopping</option>
+          <option value="Bills">Bills</option>
+          <option value="Salary">Salary</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <label>Description</label>
+        <input id="desc" type="text" placeholder="e.g., Pizza / Uber / Electricity" />
+      </div>
+
+      <div class="row">
+        <label>Amount</label>
+        <input id="amount" type="number" placeholder="e.g., 500" />
+      </div>
+
+      <button id="addBtn">Add Transaction</button>
+      <p id="msg" class="msg"></p>
+    </section>
+
+    <section class="list">
+      <div class="list-head">
+        <h3>Transactions</h3>
+
+        <div class="filters">
+          <select id="filterType">
+            <option value="all">All</option>
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+          </select>
+
+          <select id="filterCategory">
+            <option value="all">All Categories</option>
+            <option value="Food">Food</option>
+            <option value="Rent">Rent</option>
+            <option value="Travel">Travel</option>
+            <option value="Shopping">Shopping</option>
+            <option value="Bills">Bills</option>
+            <option value="Salary">Salary</option>
+            <option value="Other">Other</option>
+          </select>
+
+          <input id="search" type="text" placeholder="Search description..." />
+        </div>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Type</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Amount</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+
+      <button class="danger" id="clearAll">Clear All</button>
+    </section>
+
+    <footer class="muted">
+      Built with HTML • CSS • JavaScript • localStorage
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
